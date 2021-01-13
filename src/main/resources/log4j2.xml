@@ -4,7 +4,7 @@
         <Console name="ConsoleLogger" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
         </Console>
-        <File name="FileLogger" fileName="${user.home}/playsafe.log">
+        <File name="FileLogger" fileName="$user.home/playsafe.log">
             <PatternLayout>
                 <Pattern>%d %p %c{1.} [%t] %m%n</Pattern>
             </PatternLayout>
@@ -12,14 +12,14 @@
     </Appenders>
     <Loggers>
         <Logger name="com.playsafe" level="debug" additivity="false">
-            <AppenderRef ref="FileLogger"/>
+            <!--<AppenderRef ref="FileLogger"/>-->
             <AppenderRef ref="ConsoleLogger"/>
         </Logger>
         <Logger name="org.springframework.boot" level="error" additivity="false">
             <AppenderRef ref="ConsoleLogger"/>
         </Logger>
         <Root level="error">
-            <AppenderRef ref="FileLogger"/>
+            <!--<AppenderRef ref="FileLogger"/>-->
             <AppenderRef ref="ConsoleLogger"/>
         </Root>
     </Loggers>
