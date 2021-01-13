@@ -21,11 +21,12 @@ public class ConversionServiceImpl implements ConversionService {
 
     public double kelvinToCelcius(double kelvin) {
         try{
-            startTime = System.currentTimeMillis();
+            log.debug("Kelvin input: {}", kelvin);
+            startTime = System.nanoTime();
             doubleVal = (kelvin - BASE_K2C);
-            endTime = System.currentTimeMillis();
+            endTime = System.nanoTime();
             duration = endTime - startTime;
-            log.debug("Kelvin to Celcius execution duration: {}",duration);
+            log.debug("Kelvin to Celcius execution duration: {} nano seconds",duration);
             return doubleVal;
         }catch(Exception e) {
             log.error("Failed to convert Kelvin to Celcius", e);
@@ -35,11 +36,11 @@ public class ConversionServiceImpl implements ConversionService {
 
     public double celciusToKelvin(double celcius) {
         try{
-            startTime = System.currentTimeMillis();
+            startTime = System.nanoTime();
             doubleVal = (celcius + BASE_K2C);
-            endTime = System.currentTimeMillis();
+            endTime = System.nanoTime();
             duration = endTime - startTime;
-            log.debug("Celcius to Kelvin execution duration: {}",duration);
+            log.debug("Celcius to Kelvin execution duration: {} nano seconds",duration);
             return doubleVal;
         }catch(Exception e) {
             log.error("Failed to convert Celcius to Kelvin", e);
@@ -49,11 +50,11 @@ public class ConversionServiceImpl implements ConversionService {
 
     public float milesToKm(double miles) {
         try{
-            startTime = System.currentTimeMillis();
+            startTime = System.nanoTime();
             floatVal = (float) (miles * BASE_M2KM);
-            endTime = System.currentTimeMillis();
+            endTime = System.nanoTime();
             duration = endTime - startTime;
-            log.debug("Miles to Km execution duration: {}",duration);
+            log.debug("Miles to Km execution duration: {} nano seconds",duration);
             return floatVal;
         }catch(Exception e) {
             log.error("Failed to convert Miles to KM", e);
@@ -63,11 +64,11 @@ public class ConversionServiceImpl implements ConversionService {
 
     public float kmToMiles(double km) {
         try{
-            startTime = System.currentTimeMillis();
+            startTime = System.nanoTime();
             floatVal = (float) (km/BASE_M2KM);
-            endTime = System.currentTimeMillis();
+            endTime = System.nanoTime();
             duration = endTime - startTime;
-            log.debug("Km to Miles execution duration: {}",duration);
+            log.debug("Km to Miles execution duration: {} nano seconds",duration);
             return floatVal;
         }catch(Exception e) {
             log.error("Failed to convert KM to Miles", e);           
